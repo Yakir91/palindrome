@@ -11,6 +11,13 @@ testButton.addEventListener("click", () => {
     }
 );
 
+// resets the input value
+resetButton.addEventListener("click", () => {
+    inputName.value = "";
+    testButton.style.backgroundColor = '';
+    message.innerHTML = '';
+});
+
 // check if the string is a palindrome
 function checkPalindrome(userString) {
     if (userString.length === 0) {
@@ -22,15 +29,10 @@ function checkPalindrome(userString) {
     let splitRevJoin = splitStrRev.join("");
     if (userString === splitRevJoin) {
         testButton.style.backgroundColor = "green";
-        message.innerHTML = 'This is a Palindrom!'
+        message.innerHTML = 'This is a Palindrom!';
     } else {
         testButton.style.backgroundColor = "red";
-        message.innerHTML = 'This is NOT a Palindrom!'
+        message.innerHTML = 'This is NOT a Palindrom!';
     }
-}
-// resets the input value
-resetButton.addEventListener("click", () => {
-    inputName.value = "";
-    testButton.style.backgroundColor = '';
-    message.innerHTML = '';
-})
+};
+
