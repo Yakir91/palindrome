@@ -1,3 +1,27 @@
 body {
     background-color: wheat;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
 }
+
+input {
+    width: 400px;
+    padding: 20px;
+    font-size: 26px;
+    margin-bottom: 15px;
+}
+
+button {
+    margin: 5px;
+    padding: 20px;
+    font-size: 30px;
+    width: 200px;
+}
+
+h1 {
+    font-size: 50px;
+    margin-top: 10%;
+}
+
