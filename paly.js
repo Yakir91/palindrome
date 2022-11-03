@@ -1,25 +1,36 @@
 // Select the elements in the page
 // Set them into a variable.
-const testButton = document.querySelector('.test');
-const resetButton = document.querySelector('.reset');
-const inputName = document.querySelector('.field');
+const testButton = document.querySelector('#test');
+const resetButton = document.querySelector('#reset');
+const inputName = document.querySelector('#field');
+const message = document.querySelector('#message')
 
-testButton.addEventListener("click", function() {
-    palindrome();
+// clicking on test button to execute the function with the argumentor of the field value
+testButton.addEventListener("click", () => {
+    checkPalindrome(inputName.value);
     }
 );
 
-function palindrome() {
-    
+// check if the string is a palindrome
+function checkPalindrome(userString) {
+    if (userString.length === 0) {
+        alert('Please type in the field');
+        return;
+    }
+    let splitStr = userString.split('');
+    let splitStrRev = splitStr.reverse();
+    let splitRevJoin = splitStrRev.join("");
+    if (userString === splitRevJoin) {
+        testButton.style.backgroundColor = "green";
+        message.innerHTML = 'This is a Palindrom!'
+    } else {
+        testButton.style.backgroundColor = "red";
+        message.innerHTML = 'This is NOT a Palindrom!'
+    }
 }
-// test-flow
-    // User typing a word.
-    // User clicks 'Test' button
-//let function palindromeTest(
-    // Build palindrome function 
-
-
-        // if palindrome - button.background = green + success text output.
-        // else - failed text output + button.background = red.
-
-    // if user clicks reset - delete the value from the input field (whether there is or not)
+// resets the input value
+resetButton.addEventListener("click", () => {
+    inputName.value = "";
+    testButton.style.backgroundColor = '';
+    message.innerHTML = '';
+})
