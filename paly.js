@@ -24,15 +24,20 @@ function checkPalindrome(userString) {
         alert('Please type in the field');
         return;
     }
+    // split the string into an array elements
     let splitStr = userString.split('');
+    // reverse the order of the arrays elements
     let splitStrRev = splitStr.reverse();
+    // join the reveresed array into a string
     let splitRevJoin = splitStrRev.join("");
+    // compare between the given string to the reversed string
+    // change the buttons colors and text according to choice
     if (userString === splitRevJoin) {
         testButton.style.backgroundColor = "green";
-        message.innerHTML = 'This is a Palindrom!';
+        message.innerHTML = 'This is a Palindrome!';
     } else {
         testButton.style.backgroundColor = "red";
-        message.innerHTML = 'This is NOT a Palindrom!';
+        message.innerHTML = 'This is NOT a Palindrome!';
     }
 };
 
